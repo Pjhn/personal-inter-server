@@ -44,3 +44,4 @@ out/
 ### Gradle ###
 **/build/
 !src/**/build/
+/src/main/resources/application.properties
