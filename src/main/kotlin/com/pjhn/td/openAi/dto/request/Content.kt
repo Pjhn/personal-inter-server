@@ -1,4 +1,4 @@
-package com.pjhn.td.dto.request
+package com.pjhn.td.openAi.dto.request
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
