@@ -13,8 +13,9 @@ class OpenAiController(
     private val openAiService: OpenAiCallService
 ) {
 
+    // 기존에는 MultipartFile 사용
     @PostMapping("/image")
-    fun imageAnalysis(@RequestParam image: MultipartFile, @RequestParam requestText: String): String{
+    fun imageAnalysis(@RequestParam image: ByteArray, @RequestParam requestText: String): String{
         val response = openAiService.requestImageAnalysis(image,requestText)
         return response?.choices?.get(0)?.message?.content ?: "empty"
     }

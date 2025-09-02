@@ -17,8 +17,8 @@ class OpenAiCallService(
     @Value("\${openai.api.url}") private val apiUrl: String,
     private val template: RestTemplate
 ) {
-    fun requestImageAnalysis(image: MultipartFile, requestText: String): OpenAiResponse? {
-        val base64Image = Base64.getEncoder().encodeToString(image.bytes)
+    fun requestImageAnalysis(image: ByteArray, requestText: String): OpenAiResponse? {
+        val base64Image = Base64.getEncoder().encodeToString(image)
         val imageURL = "data:image/jpeg;base64,$base64Image"
 
         val payload = buildJsonObject {
